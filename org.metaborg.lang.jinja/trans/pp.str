@@ -1,0 +1,35 @@
+module pp
+
+imports
+
+	libstratego-gpp
+	lib/runtime/tmpl/pp
+	
+	Class.pp.generated
+	Common.pp.generated
+	Expr.pp.generated
+	Field.pp.generated
+	Jinja.pp.generated
+	Method.pp.generated
+	Type.pp.generated
+	Value.pp.generated
+	
+rules
+	
+  pp-Jinja-string =
+    prettyprint-Program
+    ; !V([], <id>)
+    ; box2text-string(|120)
+      
+  pp-partial-Jinja-string =
+    prettyprint-example
+    ; !V([], <id>)
+    ; box2text-string(|120)
+      
+  pp-debug :
+    ast -> result
+    with
+       result := <pp-Jinja-string> ast
+    <+ <bottomup(try(not(is-string); not(is-list); not(pp-Jinja-string); debug(!"cannot pp ")))> ast
+    ;  result := ""
+

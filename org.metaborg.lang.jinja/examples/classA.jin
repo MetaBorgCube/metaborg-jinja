@@ -1,0 +1,41 @@
+class A {
+  Integer int;
+  Class A test;
+  public () -> Boolean isNull() {
+    this.test{A} == Null;
+  };
+  public (Integer) -> Integer add(Integer i) {
+    this.int{A} = this.int{A} + i;
+    this.int{A};
+  };
+  public (Integer, Integer) -> Integer mult(Integer i, Integer j) {
+    {
+      Integer temp;
+      temp = 0;
+      while ((j == 0) == False) {
+        temp = temp + i;
+        j = j + -1;
+      };
+      this.int{A} = temp;
+      temp;
+    };
+  };
+}
+
+class B {
+  public () -> Integer testA() {
+    {
+      Class A A1;
+      {
+        Class A A2;
+        {
+          Integer testint;
+          testint = 5;
+          A2.int{A} = A1.add(testint);
+          A2.int{A} = A1.add(testint);
+          A2.mult(A2.int{A}, testint);
+        };
+      };
+    };
+  };
+}

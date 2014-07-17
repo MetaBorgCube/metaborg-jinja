@@ -1,0 +1,11 @@
+module Field
+
+imports
+
+  Common
+  Type
+
+templates
+
+  FDecl.FDecl = <<Type> <FieldID>;>
+  

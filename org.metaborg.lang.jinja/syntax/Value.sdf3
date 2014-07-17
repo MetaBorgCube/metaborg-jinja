@@ -1,0 +1,17 @@
+module Value
+
+imports
+  Common
+
+templates
+
+  Value.True  = <True>
+  Value.False = <False>
+  Value.Int   = <<INT>>
+  Value.Null  = <Null>
+  Value.Unit  = <()>
+  Value.Addr  = <Addr <AddrID>>
+  
+template options
+  tokenize: "()"
+  

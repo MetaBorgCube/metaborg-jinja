@@ -1,0 +1,42 @@
+class Base {
+  Integer a;
+  public () -> Integer getA() {
+    this.a{Base};
+  };
+}
+
+class Child : Base {
+  Boolean a;
+  public () -> Boolean getA() {
+    this.a{Child};
+  };
+  public () -> Integer getParentA() {
+    this.a{Base};
+  };
+}
+
+class GrandChild : Child {
+  public () -> Boolean getParentA() {
+    this.a{Child};
+  };
+  public () -> Integer getGrandParentA() {
+    this.a{Base};
+  };
+}
+
+class TestingInh {
+  public () -> Boolean getA() {
+    {
+      Class GrandChild g;
+      g = new GrandChild;
+      g.getA();
+    };
+  };
+  public () -> Boolean getParentA() {
+    {
+      Class GrandChild g;
+      g = new GrandChild;
+      g.getParentA();
+    };
+  };
+}

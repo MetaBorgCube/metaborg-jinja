@@ -1,0 +1,55 @@
+module Expr
+
+imports
+  Common
+  Type
+  Value
+  Notation
+  
+templates
+
+  Expr.New        = <new <ClassRef>>
+  Expr.Cast       = <cast <ClassRef> <Expr>>
+  Expr.Literal    = <<Value>>
+  Expr.Add        = <<Expr> + <Expr>> {left}
+  Expr.Eq         = <<Expr> == <Expr>> {left}
+  Expr.VarAccess  = <<VariableRef>>
+  Expr.VarAssign  = <<VariableRef> = <Expr>>
+  Expr.FldAccess  = <<Expr>.<FieldID>{<ClassRef>}>
+  Expr.FldAssign  = <<Expr>.<FieldID>{<ClassRef>} = <Expr>>
+  Expr.MethodCall = <<Expr>.<MethodID>(<Expr*; separator=", ">)>
+  Expr.Block      = <
+  {
+    <Type> <VariableID>;
+    <Expr>;
+  }
+  >
+  Expr.Seq        = <
+  <Expr>;
+  <Expr>
+  > {left}
+  Expr.Cond       = <
+  if (<Expr>) {
+    <Expr>;
+  } else {
+    <Expr>;
+  }
+  >
+  Expr.While      = <
+  while (<Expr>) {
+    <Expr>;
+  }
+  >
+  Expr.Throw      = <throw <Expr>>
+  Expr.Try        = <
+  try {
+    <Expr>;
+  } catch (<ClassRef> <VariableID>) {
+    <Expr>;
+  }
+  >
+  Expr           = <(<Expr>)> {bracket}
+
+context-free priorities
+
+  Expr.Cast > Expr.FldAccess > Expr.MethodCall > Expr.Add > Expr.Eq > {non-assoc: Expr.Throw Expr.FldAssign Expr.VarAssign} > Expr.Seq

@@ -1,0 +1,8 @@
+/include
+/.cache
+/lib
+/syntax/*.sdf
+/syntax/*.pp
+/bin
+*.generated*
+/trans/Names.str

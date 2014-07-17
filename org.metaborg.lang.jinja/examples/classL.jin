@@ -1,0 +1,11 @@
+class L {
+  Integer F;
+  Class L N;
+  public (Class L) -> Void app(Class L l) {
+    if (this.N{L} ==  Null) {
+      this.N{L} = l;
+    } else {
+      this.N{L}.app(l);
+    };
+  };
+}

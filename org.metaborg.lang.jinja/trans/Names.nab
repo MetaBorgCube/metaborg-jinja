@@ -1,0 +1,56 @@
+module Names
+
+namespaces
+  Class
+  Field
+  Method
+  Variable
+
+binding rules
+
+  CDecl(name,c):
+    defines Class name
+    implicitly defines Variable "this" of type ClassRef(name)
+    scopes Field, Method, Variable
+  
+  Class(Some(p),f,m):
+    imports
+      Field, imported Field, 
+      Method, imported Method
+    from Class p
+  
+  MDecl(ty, name, params, body):
+    defines Method name of type ty
+    scopes Variable
+
+  Parameter(ty, name):
+    defines Variable name of type ty
+    
+  FDecl(ty, name):
+    defines Field name of type ty
+
+// Expressions
+
+  ClassRef(name):
+    refers to Class name
+  
+  VariableRef(name):
+    refers to Variable name
+  
+  FldAccess(expr, fname, cname):
+    refers to Field fname in Class cl
+    where cname resolves to Class cl
+  
+  FldAssign(expr, fname, cname, expr'):
+    refers to Field fname in Class cl
+    where cname resolves to Class cl
+  
+  MethodCall(e1, name, es):
+    refers to Method name in Class c
+    where e1 has type ClassRef(c)
+
+  Block(ty, name, b):
+    defines Variable name of type ty in b
+  
+  Try(expr1, class, varid, expr2):
+    defines Variable varid of type ClassRef(class) in expr2

@@ -1,0 +1,9 @@
+class I {
+  public (Integer, Integer) -> Integer mult(Integer i, Integer j) {
+    if (i == 0) {
+      0;
+    } else {
+      this.mult(i + -1, j);
+    };
+  };
+}

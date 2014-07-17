@@ -1,0 +1,4 @@
+class Class1 {
+  public () -> Boolean t () { True; };
+  public () -> Boolean f () { False; };
+}

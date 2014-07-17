@@ -1,0 +1,19 @@
+module Class
+
+imports
+  Common
+  Field
+  Method
+
+templates
+
+  CDecl.CDecl = <class <ClassID> <Class>>
+  
+  Class.Class = <
+  <ParentClass?> {
+    <FDecl*; separator="\n">
+    <MDecl*; separator="\n">
+  }
+  >
+  
+  ParentClass = <: <ClassID>>

@@ -1,0 +1,10 @@
+module editor/Jinja-Outliner
+
+imports
+  include/Jinja
+  lib/runtime/editor/outline-library
+  lib/runtime/editor/origins
+  editor/Jinja-Outliner.generated
+
+rules
+  

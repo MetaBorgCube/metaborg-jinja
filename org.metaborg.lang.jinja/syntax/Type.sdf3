@@ -1,0 +1,13 @@
+module Type
+
+imports Common Class
+
+templates
+
+  Type.Boolean   = <Boolean>
+  Type.Integer   = <Integer>
+  Type.Reference = <Ref>
+  Type.Void      = <Void> // Type of Unit, or ()
+  Type.NullType  = <NT>
+  Type           = <Class <ClassRef>>
+  Type.Arrow     = [([Type*; separator=", "]) -> [Type]]

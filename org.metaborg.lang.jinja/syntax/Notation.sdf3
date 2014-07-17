@@ -1,0 +1,21 @@
+module Notation
+
+imports Expr Value Common
+
+templates
+
+  Expr.Trowa  = <Throw <AddrID>>
+  Expr.THROWC = <THROW <Sys-xcpts>>
+  
+  Sys-xcpts.NullPointer = <NullPointer>
+  Sys-xcpts.ClassCast   = <ClassCast>
+  Sys-xcpts.OutOfMemory = <OutOfMemory>
+
+syntax
+
+  <Sys-xcpts-CF> -> <Reserved-LEX> 
+
+lexical syntax
+
+  Reserved = "Throw"
+  Reserved = "THROW"

@@ -1,0 +1,31 @@
+module Jinja.main
+
+imports
+  Jinja-Colorer
+  Jinja-Completions
+  Jinja-Folding
+  Jinja-Menus
+  Jinja-Refactorings
+  Jinja-References
+  Jinja-Syntax
+  Jinja-Views
+
+language General properties
+  
+  name:          Jinja
+  id:            Jinja
+  extends:       Root
+  
+  description:   "Spoofax-generated editor for the Jinja language, a Java-like language"
+  url:           http://dx.doi.org/10.1145/1146809.1146811
+  
+  extensions:    jin
+  table:         include/Jinja.tbl
+  start symbols: Program
+  
+  provider:      include/jinja.ctree
+  // provider:      include/jinja-java.jar
+  
+  observer:      editor-analyze (multifile)
+  
+  on save:       editor-save

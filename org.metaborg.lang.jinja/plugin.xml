@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         point="org.eclipse.imp.runtime.languageDescription">
+      <language
+            extensions="jin"
+            description="Jinja"
+            language="Jinja"
+            derivedFrom="DynamicRoot"
+            validator="Jinja.JinjaValidator"
+            validatorClass="Jinja.JinjaValidator"
+      ></language>
+   </extension>
+   <extension
+         id="Jinja.parser"
+         name="Jinja Parser"
+         point="org.eclipse.imp.runtime.parser">
+      <parser
+            class="Jinja.JinjaParseController"
+            language="Jinja">
+      </parser>
+   </extension>    
+</plugin>

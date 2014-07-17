@@ -1,0 +1,12 @@
+module trans/desugar
+
+imports include/Jinja
+
+strategies
+  
+  desugar-all = bottomup(try(desugar))
+    
+rules
+      
+  desugar:
+  	Trowa(a) -> Throw(Addr(a))

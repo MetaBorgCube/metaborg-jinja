@@ -1,0 +1,18 @@
+module Method
+
+imports
+  Common
+  Type
+  Expr
+
+templates
+
+  MDecl.MDecl = <
+  public <Type> <MethodID> (<Parameter*; separator=", ">) {
+    <Expr>;
+  };
+  >
+  
+templates
+
+  Parameter.Parameter = <<Type> <VariableID>>
